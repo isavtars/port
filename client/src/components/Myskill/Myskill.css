@@ -1,0 +1,37 @@
+.skilltext {
+
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+.frontend{
+
+    width: 100%;
+}
+
+
+.swiper {
+
+   cursor: pointer;
+   width: 100%;
+  }
+
+
+  .swiper-slide {
+/* background-color: #282835; */
+}
+
+.div{
+
+    width: 100%;
+    background-color: aqua;
+}

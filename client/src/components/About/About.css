@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant&display=swap');
+.aboutcont{
+
+  
+   /* background-color: #fb982f; */
+/* overflow-x: scroll; */
+   
+}
+
+.skill{
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+ 
+}
+
+.skill_cointener img{
+
+    height:35rem;
+    object-fit: contain;
+    box-shadow: var(--boxShadows); 
+    border-radius: 20px;
+  
+}
+
+
+.text{
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+box-shadow: var(--boxShadow); 
+
+}
+
+.textcont h1,h2{
+    font-family: 'Anton', sans-serif;
+   
+}
+
+.xxp{
+    font-family: 'Cormorant', serif !important;
+}
+
+.textcont p {
+   
+font-family: 'Satisfy', cursive;
+
+}
+
+
+.textcont p:hover {
+
+    color: var(--orange);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.dbutton{
+    background: linear-gradient(180deg, #fdc50f 26.71%, #fb982f 99.36%);
+    box-shadow: 0px 20px 24px 3px rgba(251, 161, 40, 0.42);
+    border-radius: 34px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 11px 26px 11px 26px;
+  }
+
+  
+  .dbutton:hover {
+    background: white;
+    cursor: pointer;
+    border: 1px solid var(--orange);
+    color: var(--orange);
+  }
+
+  .wrapper{
+    display: flex;
+  }
+  .wrapper .static-txt{
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 400;
+  }
+  .wrapper .dynamic-txts{
+    margin-left: 15px;
+    height: 90px;
+ 
+    overflow: hidden;
+  }
+  .dynamic-txts li{
+    list-style: none;
+    color: #faa810;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+  }
+  @keyframes slide {
+    100%{
+      top: -360px;
+    }
+  }
+  .dynamic-txts li span{
+    position: relative;
+    margin: 5px 0;
+    line-height: 90px;
+  }
+  .dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #343F4F;
+    border-left: 2px solid #f1ea0a;
+    animation: typing 3s steps(10) infinite;
+  }
+  @keyframes typing {
+    40%, 60%{
+      left: calc(100% + 30px);
+    }
+    100%{
+      left: 0;
+    }
+  }

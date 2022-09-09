@@ -1,0 +1,58 @@
+/* #app { height: 100% }
+html,
+body {
+  position: relative;
+  height:100vh;
+} */
+/* 
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+} */
+
+
+
+.homecont{
+
+ /* width:73vw; */
+ height: 95vh;
+
+
+
+
+}
+.homecont .swiper {
+ 
+  height: 100%;
+  width: 100%;
+
+ 
+}
+
+
+
+.homecont .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+
+.homecont .swiper-slide img {
+
+  width:100%;
+  height:100%;
+  object-fit:contain;
+
+} 

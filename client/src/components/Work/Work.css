@@ -1,0 +1,42 @@
+.image-box{
+
+    min-height: 300px;
+    width: 350px;
+
+}
+
+
+.imgcont{
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.portfolio-image{
+
+    /* position: absolute; */
+    height:99%;
+    width: 99%;
+    object-fit: contain;
+}
+
+
+
+.btn {
+    background: linear-gradient(180deg, #fdc50f 26.71%, #fb982f 99.36%);
+    box-shadow: 0px 20px 24px 3px rgba(251, 161, 40, 0.42);
+    border-radius: 24px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+   
+  }
+  
+  .btn:hover {
+    background: white;
+    cursor: pointer;
+    border: 1px solid var(--orange);
+    color: var(--orange);
+  }

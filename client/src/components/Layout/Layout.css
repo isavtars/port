@@ -1,0 +1,57 @@
+.holelayout{
+
+    color:var(--orange);
+    overflow-x: hidden;
+ 
+  
+}
+
+
+.moiilecont{
+
+    height: 10vh;
+    background-color: aqua;
+    position: sticky;
+    top:50;
+    z-index: 999999;
+}
+
+
+.tooglrcointener_show{
+  
+    position: absolute;
+    top:0px;
+    left: 0;
+    width: 100vw;
+    background-color: red;
+    height: 100vh;
+    transition: all 0.9s ease-in-out;
+}
+
+
+.tooglrcointener_hide{
+
+    position: absolute;
+    top:-10000px;
+    left: 0;
+    width: 100vw;
+    transition: all 0.9s ease-in-out;
+}
+
+
+
+
+.crossbone{
+
+    transform: rotate(0deg);  
+}
+
+.crossbone:hover{
+    transition: all 0.9s ease;
+    transform: rotate(360deg);
+  
+}
+.sidenav {
+
+    width: 100%;
+}
