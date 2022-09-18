@@ -18,6 +18,7 @@ import Project from './admin/Project/Project';
 import User from './admin/User/User';
 import DBlog from './admin/DBlog/DBlog';
 import Auth from './admin/Auth/Auth';
+import Register from "./admin/Register/Register";
 
 const App = () => {
   return (
@@ -41,6 +42,8 @@ const App = () => {
         
           {/* //login */}
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
 
 
            {/* this is dashboard */}

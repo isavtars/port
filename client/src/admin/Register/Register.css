@@ -1,0 +1,47 @@
+
+.dlpassword,.dlemail,.dlusername,.dladmin{
+
+    width: 100%;
+    height: 60px;
+    margin: 10px 0;
+}
+
+.dlpassword input,.dlemail input,.dlusername input{
+    background-color: #004c6c;
+    width: 100%;
+    outline: none;
+    height: 100%;
+    color:gray;
+    font-size: 1.1rem;
+  
+}
+    
+    .dladmin{
+
+        width: 100%;
+        height: 57px;
+        margin: 10px 0;
+        background: #004c6c;
+        color: beige;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center	;
+        
+    }
+
+
+    .drcont{
+        display: flex;
+        width: 75vw;
+        
+        }
+.rside1{
+background-color: aqua;
+}
+
+.rimg{
+background-color:white;
+width: 600px;
+height: 100%;
+object-fit: contain;
+}

@@ -2,7 +2,8 @@ import React from 'react'
 
 const DHome = () => {
   return (
-    <div>DHome
+    <div>
+    <h1>this dashboard overviews</h1>
     
     
     </div>

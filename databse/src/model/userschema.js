@@ -29,12 +29,12 @@ password:{
 },
 
 isAdmin:{
-    type:Boolean
+    type:Boolean,
 }
 
 })
 
 
-const userModel= new mongoose.model("avtars",userSchema)
+const userModel= new mongoose.model("avtarsa",userSchema)
 
 export default userModel;
