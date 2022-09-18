@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {GiBalaclava} from "react-icons/gi"
 import "./Register.css"
+import {Authcontext } from "../../context/authCont/authContext.js"
 
 //GiBalaclava
 import iamgesl from "../../assets/images/dl.png"
 
-const Register = () => (
+const Register = () => {
+
+  const first = useContext(Authcontext)
+  console.log(first)
+
+  return(
   <div className="Dlogin">
 
   <div className="drcont">
@@ -64,7 +70,8 @@ const Register = () => (
 
 
   </div>
-)
+  )
+  }
 
 export default Register
 

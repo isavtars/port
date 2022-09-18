@@ -1,5 +1,5 @@
 import "./App.css"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route,Navigate } from "react-router-dom";
 import Home from "./components/Home/Home";
 import About from "./components/About/About"
 import Layout from "./components/Layout/Layout.js";
@@ -20,7 +20,11 @@ import DBlog from './admin/DBlog/DBlog';
 import Auth from './admin/Auth/Auth';
 import Register from "./admin/Register/Register";
 
+import { Authcontext } from "./context/authCont/authContext";
+import { useContext } from "react";
+
 const App = () => {
+  const {user} = useContext(Authcontext)
   return (
     <>
 
@@ -41,12 +45,19 @@ const App = () => {
 
         
           {/* //login */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+         
+          <Route path="/login" element={user ? <Navigate to="/dashboard" replace /> :  <Login />}  ></Route>
+     
+          {/* <Route path="/register" element={<Register />} /> */}
 
-
+           {!user&&(
+            <Route path="/register" element={<Register />} />
+           )}
 
            {/* this is dashboard */}
+
+           {
+            user&&(
         <Route path="/dashboard" element={<Dashboard/>}>
          <Route index element={<DHome />} />
          <Route path ="account" element={<Account />} />
@@ -65,7 +76,7 @@ const App = () => {
   
      
          </Route>
-
+          ) }
        
 
   </Routes>
