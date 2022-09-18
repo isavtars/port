@@ -1,11 +1,15 @@
 import React from 'react'
+import Dnav from '../Dnav/Dnav'
+
 
 const DHome = () => {
   return (
     <div>
-    <h1>this dashboard overviews</h1>
-    
-    
+    <div className="dnavcon sticky top-0 ">
+    <Dnav />
+    </div>
+ 
+
     </div>
   )
 }

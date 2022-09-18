@@ -47,6 +47,7 @@ const authlogin=async(e)=>{
 
   //
   toast.success("login sucess")
+  
   setinput({})
   e.target.reset();
   }
