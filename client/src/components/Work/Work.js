@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Data from "../../data/port"
 import "./Work.css"
-
+import Api from "../../Api/backurl"
 
 
 
@@ -10,12 +10,25 @@ const Work = () => {
 
   // console.log(Datap)
     
-    const [portfolio, setPortfolio] = useState(Data);
-
+    // const [portfolio, setPortfolio] = useState(Data);
+    const [portfolio, setportfolio] = useState([])
     useEffect(() => {
-     
-    });
-
+  
+      const getdata= async()=>{
+  
+        try{
+          const response= await  Api.get("/api/getdata");
+          console.log(response.data)
+          setportfolio(response.data)
+  
+        }catch(err){
+            console.log(err)
+        }
+  
+  
+      }
+      getdata();
+    }, [])
   
   
 
@@ -32,7 +45,9 @@ const Work = () => {
 
                       console.log(port)
                         return (
-                            <div className="image-box   cursor-pointer shadow-lg rounded-xl bg-red-600  hover:bg-slate-300 hover:text-zinc-500 " key={idx} onClick={() => window.open(port.url)}>
+                            <div className="image-box   cursor-pointer shadow-lg rounded-xl bg-red-600  hover:bg-slate-300 hover:text-zinc-500 "
+                             key={idx} 
+                             onClick={() => window.open(port.link)}>
 
                             <div className="imgcont rounded-xl">
                             
