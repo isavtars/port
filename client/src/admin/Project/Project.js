@@ -100,9 +100,12 @@ const Project = () => {
           <h1 className='text-[#FCA61F] font-bold text-xl'>{datas.ptitle}</h1>
           <p className='text-[#0ebef4]  text-xl italic'>{datas.link}</p>
           <div class="updelbtn flex">
-            <button className='ml-1 flex justify-center items-center h-10 w-40 rounded-sm shadow-md bg-green-600 text-xl text-white'>update 
-            <MdUpdate color="white" size={30} /></button>
-
+          <Link to={`/dashboard/Project/updateproject/${datas._id}`}>
+            <button className='ml-1 flex justify-center items-center h-10 w-40 rounded-sm shadow-md bg-green-600 text-xl text-white'>
+            update 
+            <MdUpdate color="white" size={30} />  </button>
+            </Link>
+           
             <button className='ml-1 flex justify-center items-center bg-red-500 text-white h-10 w-40 rounded-sm shadow-md' onClick={()=>deleteproject(datas.id,index)}>delete <MdDeleteSweep color="white" size={30}/></button>
           </div>
         </div>

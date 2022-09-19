@@ -49,6 +49,19 @@ router.post("/add",validateToken,upload.single("image"),(req,res)=>{
 //requires veriyfing middleware  ??delete
 router.delete("/delpost/:id",validateToken,apicontroller.delpost)
 
+
+
+//requires veriyfing middleware  ??update by id
+router.patch("/updatepost/:id",validateToken,upload.single("image"),(req,res)=>{
+  apicontroller.updatapost(req,res,imageName)
+})
+
+
+//get by id find by id and 
+router.get("/getbyid/:id",validateToken,apicontroller.getbyid)
+
+
+
 // this for  the normal users 
 router.get("/getdata",apicontroller.getdata)
 

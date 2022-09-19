@@ -23,6 +23,7 @@ import Register from "./admin/Register/Register";
 import { Authcontext } from "./context/authCont/authContext";
 import { useContext } from "react";
 import Addproj from "./admin/Addproj/Addproj";
+import Updatepp from './admin/Updatepp/Updatepp';
 
 const App = () => {
   const {user} = useContext(Authcontext)
@@ -65,6 +66,7 @@ const App = () => {
 
          <Route path ="Project" element={<Project />} />
          <Route path ="project/addproject" element={<Addproj />} />
+         <Route path ="project/updateproject/:id" element={<Updatepp />} />
 
          <Route path ="user" element={<User />} />
 
