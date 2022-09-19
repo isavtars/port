@@ -6,6 +6,13 @@ import Api from "../../Api/backurl"
 
 import { MdDeleteSweep, MdUpdate} from 'react-icons/md';
 
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
+
 const Project = () => {
 
   const [data, setdata] = useState([])
@@ -18,6 +25,7 @@ const Project = () => {
         console.log(response.data)
         setdata(response.data)
 
+
       }catch(err){
           console.log(err)
       }
@@ -26,13 +34,53 @@ const Project = () => {
     }
     getdata();
   }, [])
+
+  //deleteproject
+  const deleteproject=async(id,idx)=>{
+   
+    try{
+
+      if(window.confirm("are you sure")){
+ 
+       const response= await Api.delete(`/api/delpost/${id}`,
+       {
+        headers:{         
+          "Content-Type": "multipart/form-data",
+          token:JSON.parse(localStorage.getItem("user")).token,
+        },
+      })
+
+      //filter the ui state while backeend hit
+
+      console.log(response.data)
+     
+      if(response.data.sucess){
+        const newproject= data.filter((filtor,index)=>{
+          return index!== idx;
+        })
+       setdata(newproject)
+     
+       toast.success(" delete sucess")
+      }else{
+        toast.error(" delete failed")
+      }
+    }else{
+      toast.error("you not confirmed")
+    }
+    }catch(err){
+      console.log(err)
+    }
+  }
   
   return (
     <div>
-   <Dnav/>
+    <div className="dnavcon sticky top-0 ">
+    <Dnav />
+    </div>
 
    <div class="eprojectscont mx-2  my-1 bg-white">
-   <div class="ecreatepost flex bg-white justify-between items-center shadow-md h-20">
+   <ToastContainer />
+   <div class="ecreatepost flex bg-white justify-between items-center shadow-md h-20 mx-5">
    <div class="div"></div>
    <Link to="addproject">
     <button className='bg-[#FCA61F] h-12 rounded-sm px-1 text-white shadow-sm'>addproject</button>
@@ -45,7 +93,7 @@ const Project = () => {
    <div className="fetchtheproj">
     {
       data.map((datas,index)=>{
-        return <div key={index} className="projectcart flex my-1 justify-between items-center shadow-md rounded-md cursor-pointer">
+        return <div key={index} className="projectcart flex my-1  mx-4 justify-between items-center shadow-md rounded-md cursor-pointer">
         <div className="getposimg  flex items-centers">
           <img src={datas.image} alt="" className='fprojectimg' />
         </div>
@@ -55,12 +103,13 @@ const Project = () => {
             <button className='ml-1 flex justify-center items-center h-10 w-40 rounded-sm shadow-md bg-green-600 text-xl text-white'>update 
             <MdUpdate color="white" size={30} /></button>
 
-            <button className='ml-1 flex justify-center items-center bg-red-500 text-white h-10 w-40 rounded-sm shadow-md'>delete <MdDeleteSweep color="white" size={30}/></button>
+            <button className='ml-1 flex justify-center items-center bg-red-500 text-white h-10 w-40 rounded-sm shadow-md' onClick={()=>deleteproject(datas.id,index)}>delete <MdDeleteSweep color="white" size={30}/></button>
           </div>
         </div>
       })
     }
    </div>
+  
    </div>
      
     </div>

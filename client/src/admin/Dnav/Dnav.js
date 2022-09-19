@@ -19,7 +19,7 @@ const Dnav = () => {
     }
   return (
     <div>
-   <nav className='dnavbar h-20 bg-blue-500 shadow-md text-white flex  items-center justify-between  px-2 mx-1 '>
+   <nav className='dnavbar h-20 bg-blue-500 shadow-md text-white flex  items-center justify-between  px-2 mx-4 '>
     <div class="dnlogo">
         avtara
     </div>

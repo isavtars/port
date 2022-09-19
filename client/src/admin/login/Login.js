@@ -58,6 +58,7 @@ const authlogin=async(e)=>{
   }catch(err){
     console.log("loggin eroors")
     dispatch(loginfaliled())
+    toast.error("login error")
   }
 
 

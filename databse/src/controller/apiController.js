@@ -9,7 +9,7 @@ class ApiController {
           if(req.user.isAdmin){
             const data= new wpmodel({...req.body,image:imageName})
             const response = await data.save();
-            res.json(response)
+            res.json({sucess:true, message:"sucees fulli create post"})
           }
           else{
             res.status(403).json("you are not allowed babay")
@@ -40,6 +40,26 @@ class ApiController {
         }
 
     }
+
+
+    //delpost 
+    //delete post by admin ?? D
+    async delpost(req,res){     
+      const id =req.params.id;
+
+      try{
+        if(id){
+        const data= await wpmodel.findOneAndDelete(id);
+        res.json({sucess:true,message:"sucees fully delete"})
+        }else{
+          res.json({sucess:false,message:"id not providef"})
+        }
+      }catch(err){
+
+        res.json({sucess:false,message:err+"error during delete"})
+      }
+    }
+
 
 }
 

@@ -1,0 +1,51 @@
+.addprojectspage{
+
+    background-color: whitesmoke;
+}
+
+.addpostform{
+ background: rgb(251, 243, 243);
+}
+.projectspost{
+    background-color: whitesmoke;
+    width:60%;
+    padding: 2px;
+}
+
+.ptitle,.link,.image{
+
+    width: 100%;
+    height: 60px;
+    margin: 10px 0;
+    background-color: aquamarine;
+}
+
+.ptitle  input ,.link input,.image input{
+
+    background-color: #004c6c;
+    width: 100%;
+    outline: none;
+    height: 100%;
+    color:gray;
+    font-size: 1.1rem;
+    
+
+}
+
+.discriptons textarea{
+    outline: none;
+    width: 100%;
+    background-color: #004c6c;
+    color: antiquewhite;
+    font-size: 1.2rem;
+}
+
+
+.ppsubmit{
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    background-color: #FCA61F;
+}

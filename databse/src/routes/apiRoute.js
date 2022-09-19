@@ -40,11 +40,14 @@ router.get("/",(req,res)=>{
 
 
 
-//requires veriyfing middleware
+//requires veriyfing middleware ??Create
 router.post("/add",validateToken,upload.single("image"),(req,res)=>{
     apicontroller.adddata(req,res,imageName)
 })
 
+
+//requires veriyfing middleware  ??delete
+router.delete("/delpost/:id",validateToken,apicontroller.delpost)
 
 // this for  the normal users 
 router.get("/getdata",apicontroller.getdata)
