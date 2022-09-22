@@ -30,7 +30,6 @@ const Addproj = () => {
   const pppost= async(e)=>{
     e.preventDefault();
     try{
-
         const response= await Api.post("/api/add", {...input,image:image},
         {
           headers:{         
@@ -39,7 +38,6 @@ const Addproj = () => {
           },
         }
         )
-
         console.log(response.data)
 
         if(response.data.sucess){
@@ -51,13 +49,15 @@ const Addproj = () => {
           setTimeout(()=>{          
             navgate("/dashboard/Project")
           },2000)
+        }else{
+          toast.error("you are not allow ")
         }
+      
 
-
-        console.log(JSON.parse(localStorage.getItem('user')).token)
+       
     }catch(err){
       console.log(err)
-      toast.success("post not create")
+      toast.error("post not create")
      
     }
 

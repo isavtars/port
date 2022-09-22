@@ -14,9 +14,10 @@ import "./Home.css"
 import {Autoplay,  Navigation, Pagination} from "swiper";
 
 
-import Image1 from "../../assets/images/x.jpg"
-import Image2 from "../../assets/images/nodejs.png"
-import Image3 from "../../assets/images/css3.png"
+import Image1 from "../../assets/images/flutter.png"
+import Image2 from "../../assets/images/js.png"
+import Image3 from "../../assets/images/developer.png"
+import Image4 from "../../assets/images/reacts.png"
 
 
 //import components
@@ -56,6 +57,7 @@ const Home = () => {
         <SwiperSlide><img src={Image1} alt="" /></SwiperSlide>
         <SwiperSlide><img src={Image2} alt="" /></SwiperSlide>
         <SwiperSlide><img src={Image3} alt="" /></SwiperSlide>
+        <SwiperSlide><img src={Image4} alt="" /></SwiperSlide>
        
       
       </Swiper> 

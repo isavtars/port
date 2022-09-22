@@ -47,6 +47,7 @@ class ApiController {
     //delete post by admin ?? D
     async delpost(req,res){     
       const id =req.params.id;
+      
 
       try{
         if(req.user.isAdmin){

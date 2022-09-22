@@ -1,0 +1,18 @@
+.bheader{
+    background-color: whitesmoke;
+}
+
+.bsearch input{
+   
+    height: 100%;
+    outline: none;
+    width: 100%;
+    color: aliceblue;
+    font-size: 1.1rem;
+}
+
+.bsearch{
+  
+    width: 300px;
+    height: 40px;
+}

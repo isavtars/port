@@ -77,7 +77,6 @@ const ppupdate=async(e)=>{
       console.log(response.data)
 
       if(response.data.sucess){
-
         toast.success("sucessfully create post")
           e.target.reset()
           setimage({})

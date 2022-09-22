@@ -24,6 +24,8 @@ import { Authcontext } from "./context/authCont/authContext";
 import { useContext } from "react";
 import Addproj from "./admin/Addproj/Addproj";
 import Updatepp from './admin/Updatepp/Updatepp';
+import Blogexpo from './components/Blogexpo/Blogexpo';
+import FOF from './components/FOF/FOF';
 
 const App = () => {
   const {user} = useContext(Authcontext)
@@ -42,9 +44,10 @@ const App = () => {
           <Route path="work" element={<Work  />} />
           <Route path="contact" element={<Contact />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="blog/blogexpo1/:id" element={<Blogexpo />} />
         </Route>
 
-
+  <Route path="*" element={<FOF/>}></Route>
         
           {/* //login */}
          
@@ -56,11 +59,14 @@ const App = () => {
            
 
            {/* this is dashboard */}
+           {
+            !user?<Route  path="/login" element={user ? <Navigate to="/dashboard" replace /> :  <Login />} ></Route>:"hello"
+          }
 
            {
             user&&(
         <Route path="/dashboard" element={<Dashboard/>}>
-         <Route index element={<DHome />} />
+         <Route index element={<DHome/>} />
          <Route path ="account" element={<Account />} />
          <Route path ="analysics" element={<Analysics />} />
 
@@ -80,6 +86,8 @@ const App = () => {
      
          </Route>
           ) }
+
+          
        
 
   </Routes>

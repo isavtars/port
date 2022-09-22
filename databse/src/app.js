@@ -5,6 +5,7 @@ import "dotenv/config"
 import dbconnection from "./model/dbconnections.js"
 import authroute from "./routes/authRoutes.js"
 import apiroute from './routes/apiRoute.js';
+import blogRoute from "./routes/blogapiRoute.js";
 
 //middlearw
 const app = express();
@@ -27,6 +28,9 @@ app.use("/auth",authroute)
 
 //api router
 app.use("/api", apiroute)
+
+//blogapi
+app.use("/blogs",blogRoute)
 
 
 
