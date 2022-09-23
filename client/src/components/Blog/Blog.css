@@ -1,0 +1,36 @@
+.sbbinp{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    background-color: whitesmoke;
+    color:black;
+    font-size: 1.1rem;
+
+}
+
+
+.ballcon{
+
+   
+    width: 1000px;
+}
+
+
+.blogscard{
+
+    height: 300px;
+    width: 300px;
+    background-color: whitesmoke;
+}
+
+.blogsimag{
+  
+    height: 200px;
+    width: 200px;
+}
+.blogsimag img{
+
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}

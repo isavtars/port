@@ -100,6 +100,12 @@ class Blogcontrioller{
             const skip = (page - 1)*10;
 
             const data = await blogmodel.find().skip(skip).limit(limit);
+
+            for (let d of data){
+                //host in the sever locally
+                d.image="http://localhost:8000/uploads/" + d.image;
+            }
+            
             res.send({page:page,limit:limit,data})
             
         }catch(err){

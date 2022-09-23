@@ -39,11 +39,11 @@ const pdfd=()=>{
         <h1 className='text-xl '>BIBEK CHHETRI</h1>
         <div class="wrapper">
     <div class="static-txt">I'm a</div>
-    <ul class="dynamic-txts">
+    {/* <ul class="dynamic-txts">
       <li><span>mernstack</span></li>
       <li><span>software</span></li>
       <li><span>Freelancer</span></li>
-    </ul>
+    </ul> */}
   </div>
         <p className='text-2xl text-[#F5C32C]' >BCA STUDENT</p>
         <p className='xxp py-2 lg:py-5 lg:text-1xl'>
@@ -60,15 +60,15 @@ const pdfd=()=>{
             <p className=' py-5 lg:py-5 lg:text-1xl'>   I’m very ambitious fullstact/mern developer looking for a role in
             established IT company with the opportunity to work with the latest
             technologies on challenging and diverse projects.</p>
-            <button className='dbutton' onClick={pdfd} > <a href='mycv.pdf'  download=' avtart cv'>DownLOAD cv</a></button>
+            <button className='dbutton' onClick={pdfd} > <a href='mycv.pdf'  download=' avtart cv my-2 lg:my-0'>DownLOAD cv</a></button>
             </div>
             </div>
 
             
      </div>
 
-     <div className="skill   "> 
-        <div className="skill_cointener lg:mx-1 mx-2">
+     <div className="skill my-4 lg:my-0"> 
+        <div className="skill_cointener  lg:mx-1 mx-2">
          <img src={Image3}  alt="" />
         </div>
      </div>

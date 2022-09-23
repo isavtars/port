@@ -32,8 +32,8 @@ const Home = () => {
   return (
     <>   
 
-    <div className="homelayoutrrr lg:mx-2 xl:mx-5 w-full">
-     <div className='homecont  lg:h-[95vh]   lg:mx-2 lg:w-[75vw] '>
+    <div className="homelayoutrrr lg:mx-2 xl:mx-5 w-full mx-10">
+     <div className='homecont  lg:h-[95vh]   lg:mx-2 lg:w-[75vw] my-1 '>
 
     <div className="homecont lg:ml-20  xl:my-2">
 
@@ -70,18 +70,26 @@ const Home = () => {
 
 
     {/* --------------------------------about---------------------------------- */}
-
-    <About/>
+     <div class="mainabou my-2 py-10 lg:my-0 lg:py-0">
+            <About/>
+        </div>
+  
      {/* --------------------------------Myskill---------------------------------- */}
 
      <Myskill/>
 
       {/* --------------------------------Work-------------------------------- */}
-        <Work/>
+       <div class="dsdsdds my-5 lg:my-0 lg:py-10">
+       <Work/>
+       </div>
+
+     
 
            {/* ------------------------contacts-------------------------------- */}
-          
+          <div class="fedjdsfnsdfn lg:my-2 lg:py-5">
           <Contact/>
+          </div>
+      
 
             {/* ------------------------footer-------------------------------- */}
 

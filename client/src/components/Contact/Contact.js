@@ -83,10 +83,10 @@ const Contact = () => {
           </div>
       </div>
 
-      <div className='map text-white'>
-      <div className="mapcont lg:mx-1 mx-2  2xl:mx-5">
+      <div className='map text-white py-10'>
+      <div className="mapcont  mx-2  lg:mx-10">
      
-        <div className="googlema">
+        <div className="googlema py-10">
         <iframe key={1} className='iframe lg:mx-28 w-[400px] xl:h-[36rem]  sm:w-[800px] lg:w-[600px] 2xl:w-[570px]   h-[450px] lg:h-[38rem]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.0898257571266!2d84.43203061515585!3d27.683618482801627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3994fb2d933d355d%3A0x5e79bbe09d977ee3!2sSaptagandaki%20Multiple%20Campus!5e0!3m2!1sen!2snp!4v1660361117116!5m2!1sen!2snp" style={{border:0}} ></iframe>
         </div>
         </div>
