@@ -5,7 +5,7 @@ import Dnav from '../Dnav/Dnav'
 const DHome = () => {
   return (
     <div>
-    TODO
+  
     <div className="dnavcon sticky top-0 ">
     <Dnav />
     </div>

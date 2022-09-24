@@ -29,6 +29,11 @@ import FOF from './components/FOF/FOF';
 
 const App = () => {
   const {user} = useContext(Authcontext)
+  if(user===null){
+  console.log(user)
+  }else{
+    console.log(user)
+  }
   return (
     <>
 
@@ -52,20 +57,28 @@ const App = () => {
           {/* //login */}
          
           <Route path="/login" element={user ? <Navigate to="/dashboard" replace /> :  <Login />}  ></Route>
+          <Route path="/dashboard" element={user == null ? <Navigate to="/login" replace /> :  <Dashboard />}  ></Route>
           <Route path="/register" element={<Register/>}></Route>
      
           {/* <Route path="/register" element={<Register />} /> */}
-
-           
-
            {/* this is dashboard */}
-           {
-            !user?<Route  path="/login" element={user ? <Navigate to="/dashboard" replace /> :  <Login />} ></Route>:"hello"
-          }
+     
 
-           {
-            user&&(
-        <Route path="/dashboard" element={<Dashboard/>}>
+  
+     
+         
+
+             
+            
+{
+
+    
+   !user&&(
+          <Route path="/login" element={<Login />}  ></Route>
+         )}
+         {
+        
+         user&&(<Route path="/dashboard" element={<Dashboard/>}>
          <Route index element={<DHome/>} />
          <Route path ="account" element={<Account />} />
          <Route path ="analysics" element={<Analysics />} />
@@ -87,6 +100,8 @@ const App = () => {
          </Route>
           ) }
 
+
+   
           
        
 

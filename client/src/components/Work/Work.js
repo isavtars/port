@@ -12,6 +12,7 @@ const Work = () => {
     
     // const [portfolio, setPortfolio] = useState(Data);
     const [portfolio, setportfolio] = useState([])
+    const [isloding, setisloding] = useState(true)
     useEffect(() => {
   
       const getdata= async()=>{
@@ -20,6 +21,7 @@ const Work = () => {
           const response= await  Api.get("/api/getdata");
           console.log(response.data)
           setportfolio(response.data)
+          setisloding(false)
   
         }catch(err){
             console.log(err)
@@ -41,7 +43,7 @@ const Work = () => {
                 {/* <div>{renderPortfolio(portfolio)}</div> */}
                 <div className="images-container flex flex-wrap justify-center gap-2 ">
                 {
-                    portfolio.map((port, idx) => {
+                  !isloding?portfolio.map((port, idx) => {
 
                       console.log(port)
                         return (
@@ -72,7 +74,9 @@ const Work = () => {
                                 </div> */}
                             </div>
                         )
-                    })
+                    }):(<div className="spinner-border text-primary my-3" style={{width:"5rem",height:"5rem"}} role="status">
+  <span className="visually-hidden">Loading...</span>
+</div>)
                 }
             </div>
             </div>

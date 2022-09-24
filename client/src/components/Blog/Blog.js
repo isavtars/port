@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import { Link } from 'react-router-dom';
 import "./Blog.css"
-
+import ReactPaginate from "react-paginate";
 import Api from "../../Api/backurl.js"
 
 const Blog = () => {
@@ -11,60 +11,81 @@ const Blog = () => {
   const [islodding, setislodding] = useState(true)
 
 
-  //for the paginatons states
-  const [pc, setpc] = useState(1)
-  const [cp, setcp] = useState(1)
-
-  console.log(pc,cp)
- 
-
- 
-
-
-
-  //next
-  const next=()=>{
-  
-  }
-
-  const pre=()=>{
-   
-  }
-
-
-
-  console.log(blogtemt)
-
+  //paginations
+  const [pageCount, setpageCount] = useState(0);
+  let limit = 10;
 
 
   //for input text
   const [input, setinput] = useState("")
 
-  console.log(input)
-
+//paginations
 useEffect(() => { 
   const fetchblog=async()=>{
-
      try{
       //making paginations
-     const response=await Api.get(`/blogs/paginations?page=${cp}`);
+     const response=await Api.get(`/blogs/paginations?page=1&limit=${limit}`);
     setblogdata(response.data.data)
     setblogtemt(response.data.data)
-    setpc(response.data.limit)
-    setpc(response.data.page)
     console.log(response.data.data)
+    //
+    const page = response.data.page;
+    setpageCount(Math.ceil(page / limit));
     setislodding(false)
+    console.log(pageCount)
      }catch(err){
       console.log(err)
      }
   }
-    // if(input) fetchdata(); 
-    // else{
-    //   setblogdata(blogtemt)
-    // }
-
     fetchblog();
-}, [])
+}, [limit])
+
+//antoert
+const sethblog=async(currentPage)=>{
+  try{
+   //making paginations
+  const response=await Api.get(`/blogs/paginations?page=${currentPage}&limit=${limit}`);
+ setblogdata(response.data.data)
+ setblogtemt(response.data.data)
+ console.log(response.data.data)
+ //
+ 
+
+ setislodding(false)
+  }catch(err){
+   console.log(err)
+  }
+}
+//  sethblog();
+
+ const handlePageClick = async (data) => {
+  console.log(data.selected);
+  
+  let currentPage = data.selected + 1;
+  // let currentPage = pageCount + 1;
+  let commentsFormServer = await sethblog(currentPage);
+};
+
+
+const handleclickpagep = async (data) => {
+  console.log(data.selected);
+
+
+  let currentPage =setpageCount(pageCount - 1)
+  console.log(currentPage);
+  const commentsFormServer = await sethblog(currentPage);
+  console.log(commentsFormServer);
+};
+
+
+
+const handleclickpagen = async (data) => {
+
+  const currentpage =setpageCount(pageCount + 1)
+  console.log(currentpage);
+  const commentsFormServer = await sethblog(currentpage);
+  console.log(commentsFormServer);
+};
 
 
 useEffect(() => {
@@ -115,17 +136,37 @@ useEffect(() => {
         <h4>{datas.btitle}</h4>
          
        </div>
-      }):islodding?"loding":"blognotfound"}
+      }):islodding?(<div className="spinner-border text-primary my-3" style={{width:"5rem",height:"5rem"}} role="status">
+  <span className="visually-hidden">Loading...</span>
+</div>):"blog not found"}
     </div>
     </div>
 
-    <div class="pagiantions h-12 bg-white px-5 flex justify-center items-center">
+    <div class="pagiantions h-12 bg-white px-5 py-3 flex justify-center items-center">
 
-      <button className='px-2' onClick={next}>next</button>
-
-     {/* <h1>{pagin}</h1> */}
-
-      <button className='px-2' onClick={pre}>previous</button>
+    <button onClick={handleclickpagep} className="bg-[#f8f8f8] p-2 rounded-md text-blue-500">previopus</button> 
+    <ReactPaginate
+        previousLabel={"<"}
+        nextLabel={">"}
+        breakLabel={"..."}
+        pageCount={pageCount}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={3}
+        onPageChange={handlePageClick}
+        containerClassName={"pagination justify-content-center"}
+        pageClassName={"page-item"}
+        pageLinkClassName={"page-link"}
+        previousClassName={"page-item"}
+        previousLinkClassName={"page-link"}
+        nextClassName={"page-item"}
+        nextLinkClassName={"page-link"}
+        breakClassName={"page-item"}
+        breakLinkClassName={"page-link"}
+        activeClassName={"active"}
+      />
+     
+    
+      <button onClick={handleclickpagen} className="bg-[whitesmoke] p-2 rounded-md text-blue-500">next</button>
     </div>
 
 {/* 
