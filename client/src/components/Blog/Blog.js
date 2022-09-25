@@ -1,10 +1,12 @@
 import React,{useEffect,useState} from 'react'
-import { Link } from 'react-router-dom';
+import {  useNavigate  } from 'react-router-dom';
 import "./Blog.css"
 import ReactPaginate from "react-paginate";
 import Api from "../../Api/backurl.js"
 
 const Blog = () => {
+
+  const navigate=useNavigate();
 
   const [blogdata, setblogdata] = useState([])
   const [blogtemt, setblogtemt] = useState([])
@@ -127,12 +129,14 @@ useEffect(() => {
 
     <div className="blofgsfetccon">
     <div class="ballcon  flex flex-wrap gap-1 mx-5 lg:w-full justify-center">
+
       {blogdata.length>0?blogdata.map((datas,index)=>{
        
-       return <div key={index} className='blogscard my-1 flex justify-center flex-col items-center rounded-md shadow-lg cursor-pointer'>
+       return <div key={index} className='blogscard my-1 flex justify-center flex-col items-center rounded-md shadow-lg cursor-pointer' onClick={()=> navigate("/blog/blogexpo",{state:{ datas }})}>
+       
         <div class="blogsimag"> 
           <img src={datas.image} alt="" />
-        </div>
+        </div>  
         <h4>{datas.btitle}</h4>
          
        </div>
@@ -142,7 +146,7 @@ useEffect(() => {
     </div>
     </div>
 
-    <div class="pagiantions h-12 bg-white px-5 py-3 flex justify-center items-center">
+    <div className="pagiantions h-12 bg-white px-5 py-3 flex justify-center items-center">
 
     <button onClick={handleclickpagep} className="bg-[#f8f8f8] p-2 rounded-md text-blue-500">previopus</button> 
     <ReactPaginate

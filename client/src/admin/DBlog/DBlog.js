@@ -1,6 +1,7 @@
 import React from 'react'
 import "./DBlog.css"
 import Dnav from  "../Dnav/Dnav"
+import { Link } from 'react-router-dom'
 const DBlog = () => {
   return (
     <div className='mx-2'>
@@ -19,12 +20,14 @@ const DBlog = () => {
         </div>
 
         <div class="addbllogd">
+        <Link to="/dashboard/dblog/adddblog">
         <button className='bg-[#FCA61F] h-12 rounded-sm px-1 text-white shadow-sm'>add blogs</button>
+        </Link>
         </div>
        </div>
 
        <div class="mainpcontentblog my-1 mx-2">
-        <h1>  jfkdsjf</h1>
+        <h1> heare we fetch the blogs</h1>
        </div>
       </div>
     </div>

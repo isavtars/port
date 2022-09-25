@@ -1,0 +1,33 @@
+.becon{
+    background-color: whitesmoke;
+    width: 90%;
+}
+
+.blgexpoimgsss {
+
+    background-color: rgb(23, 104, 154);
+    width: 100%;
+    height: 50%;
+}
+
+.blgexpoimgsss img{
+    width: 50%;
+    height: 100%;
+}
+
+.precontfdf{
+    background-color: rgb(56, 56, 56);
+    color: aliceblue;
+    width: 80%;
+}
+
+.precont{
+    background-color: aqua;
+    height: 200px;
+}
+
+.precont pre{
+    width: 90%;
+    height: 100%;
+  
+}

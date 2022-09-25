@@ -26,6 +26,7 @@ import Addproj from "./admin/Addproj/Addproj";
 import Updatepp from './admin/Updatepp/Updatepp';
 import Blogexpo from './components/Blogexpo/Blogexpo';
 import FOF from './components/FOF/FOF';
+import DBlogadd from './admin/DBlogadd/DBlogadd';
 
 const App = () => {
   const {user} = useContext(Authcontext)
@@ -49,7 +50,7 @@ const App = () => {
           <Route path="work" element={<Work  />} />
           <Route path="contact" element={<Contact />} />
           <Route path="blog" element={<Blog />} />
-          <Route path="blog/blogexpo1/:id" element={<Blogexpo />} />
+          <Route path="blog/blogexpo" element={<Blogexpo />} />
         </Route>
 
   <Route path="*" element={<FOF/>}></Route>
@@ -90,6 +91,7 @@ const App = () => {
          <Route path ="user" element={<User />} />
 
          <Route path ="dblog" element={<DBlog />} />
+         <Route path ="dblog/adddblog" element={<DBlogadd />} />
 
          
          <Route path ="auth" element={<Auth />} >
