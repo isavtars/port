@@ -64,8 +64,18 @@ router.get("/paginations",blogcon.getpaginations)
 
 
 
+//dell the blogs
+router.delete("/delblogs/:id",validateToken,blogcon.deleteblogs)
 
 
+//blogsupdateapp
+router.patch("/blogupdate/:id",validateToken,upload.single("image"),(req,res)=>{
+  blogcon.updatesblog(req,res,imageName)
+})
+
+
+//get by id find blogs
+router.get("/blogpostid/:id",validateToken,blogcon.getbyid)
 
 
 export default router;

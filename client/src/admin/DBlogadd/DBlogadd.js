@@ -7,21 +7,44 @@ import Api from "../../Api/backurl"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import JoditEditor from 'jodit-react';
+import { useRef } from 'react';
 
 
 
 
 
 const DBlogadd = () => {
+  const editor = useRef(null);
+ const [setContent, setsetContent] = useState('')
 
     const navgate = useNavigate()
 
     const [data, setdata] = useState({})
     const [image, setimage] = useState([])
 
+    
+    const hanlechange=(e)=>{
+      setdata({...data,[e.target.name]:e.target.value})
+      console.log(data)
+  }
+
+
+
     const blogpost=async(e)=>{
         e.preventDefault();
-        try{
+
+
+
+
+
+
+
+
+
+
+
+      try{
             const response= await Api.post("/blogs/blogadd", {...data,image:image},
             {
               headers:{         
@@ -30,9 +53,9 @@ const DBlogadd = () => {
               },
             }
             )
-            console.log(response.data)
+           
     
-            if(response.data){
+            if(response.data.sucess){
               toast.success("sucessfully create post")
               e.target.reset()
               setimage({})
@@ -42,7 +65,7 @@ const DBlogadd = () => {
                 navgate("/dashboard/dblog")
               },2000)
             }else{
-              toast.error("you are not allow ")
+              toast.error("post not created ")
             }
           
     
@@ -52,15 +75,12 @@ const DBlogadd = () => {
           toast.error("post not create")
          
         }
-
+      
+      
     }
+
 
   
-    
-    const hanlechange=(e)=>{
-        setdata({...data,[e.target.name]:e.target.value})
-        console.log(data)
-    }
   return (
     <div>
 
@@ -89,9 +109,16 @@ const DBlogadd = () => {
 
 
             {/* contents posts */}
-            <div className="bdescription">
+            {/* <div className="bdescription">
             <textarea name="bcontent" id="" cols={83}  rows={5} placeholder='write a post from heare ....' className=" px-2" onChange={hanlechange}></textarea>
-          </div>
+          </div> */}
+
+
+          {/* ///rich text editors */}
+    <JoditEditor
+	
+			// onChange={hanlechange}
+		/>
 
           {/* <div class="bcategories">
 
@@ -107,7 +134,7 @@ const DBlogadd = () => {
 
           <div className="form-floating">
   <select className="form-select bg-gray-500 text-white" id="floatingSelect" aria-label="Floating label select example" name='bcategories' onChange={hanlechange}>
-          <option  > select your items</option>
+          <option  select="false"> select your items</option>
          <option defaultValue="mern stack" name="bcategories">mern stack</option>
           <option defaultValue="flutter" name="bcategories">flutter</option>
           <option defaultValue="node js" name="bcategories">node js</option>
@@ -121,9 +148,9 @@ const DBlogadd = () => {
               {/* stack  */}
           <div className="form-floating my-2 bg-gray-800">
   <select className="form-select bg-gray-800 text-white  " id="floatingSelect" aria-label="Floating label select example" name='bstack' onChange={hanlechange}>
-          <option > select your items</option>
+          <option select="false" > select your items</option>
          <option defaultValue="full_Stack" name="bstack">full_Stack</option>
-          <option defaultValue="mearn_stack" name="bstack">mearn_stack</option>
+          <option defaultValue="mern_stack" name="bstack">mern_stack</option>
           <option defaultValue="back_end" name="bstack">back_end</option>
           <option defaultValue="database" name="bstack">database</option>
           <option defaultValue="mobile_applications" name="bstack">mobile_applications</option>
@@ -137,7 +164,7 @@ const DBlogadd = () => {
           
 
           <div className="ppsubmit">
-            <input type="submit" value="add blogs"  className="ppsubmit rounded-sm shadow-sm" />
+            <input type="submit" value="add blog"  className="ppsubmit rounded-sm shadow-sm" />
           </div>
 
 
@@ -147,9 +174,10 @@ const DBlogadd = () => {
 
     </div>
   )
+        
 }
 
-export default DBlogadd
+export default DBlogadd;
 
 
 //  btitle

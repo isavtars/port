@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
-import "./Blogexpo.css"
-const Blogexpo = () => {
+import "./Dblogexpo.css"
+const Dblogexpo = () => {
   let book = useLocation().state.datas;
   console.log(book)
 
@@ -17,7 +17,7 @@ const Blogexpo = () => {
    
     <p className="card-text my-3 text-[#8d8d8a] bg-[#181818] lg:h-12 px-1 font-xl rounded-md">{book.bdescription}</p>
 
-    <pre className='dddd px-2 preforblogs lg:h-96'>{`${book.bcontent}`}</pre>
+    <pre className='dddd px-2 preforblogs'>{`${book.bcontent}`}</pre>
     <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
   </div>
 
@@ -41,4 +41,4 @@ const Blogexpo = () => {
   )
 }
 
-export default Blogexpo
+export default Dblogexpo

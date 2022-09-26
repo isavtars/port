@@ -41,7 +41,9 @@ const blogschema= new mongoose.Schema({
 
 
 
-})
+},
+{ timestamps: true },
+)
 
 const blogmodel= new mongoose.model("blogs",blogschema);
 

@@ -78,10 +78,10 @@ const Project = () => {
     <Dnav />
     </div>
 
-   <div class="eprojectscont mx-2  my-1 bg-white">
+   <div className="eprojectscont mx-2  my-1 bg-white">
    <ToastContainer />
-   <div class="ecreatepost flex bg-white justify-between items-center shadow-md h-20 mx-5">
-   <div class="div"></div>
+   <div className="ecreatepost flex bg-white justify-between items-center shadow-md h-20 mx-5">
+   <div className="div"></div>
    <Link to="addproject">
     <button className='bg-[#FCA61F] h-12 rounded-sm px-1 text-white shadow-sm'>addproject</button>
     </Link>

@@ -27,14 +27,12 @@ import Updatepp from './admin/Updatepp/Updatepp';
 import Blogexpo from './components/Blogexpo/Blogexpo';
 import FOF from './components/FOF/FOF';
 import DBlogadd from './admin/DBlogadd/DBlogadd';
+import Updateblog from './admin/Updateblog/Updateblog';
+import Dblogexpo from './admin/Dblogexpo/Dblogexpo';
 
 const App = () => {
   const {user} = useContext(Authcontext)
-  if(user===null){
-  console.log(user)
-  }else{
-    console.log(user)
-  }
+ 
   return (
     <>
 
@@ -92,6 +90,10 @@ const App = () => {
 
          <Route path ="dblog" element={<DBlog />} />
          <Route path ="dblog/adddblog" element={<DBlogadd />} />
+         <Route path ="dblog/updateblog/:id" element={<Updateblog />} />
+         <Route path="dblog/dblogexpo" element={<Dblogexpo />} />
+       
+
 
          
          <Route path ="auth" element={<Auth />} >

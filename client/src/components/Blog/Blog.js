@@ -62,7 +62,6 @@ const sethblog=async(currentPage)=>{
 
  const handlePageClick = async (data) => {
   console.log(data.selected);
-  
   let currentPage = data.selected + 1;
   // let currentPage = pageCount + 1;
   let commentsFormServer = await sethblog(currentPage);
@@ -128,16 +127,26 @@ useEffect(() => {
     </div>
 
     <div className="blofgsfetccon">
-    <div class="ballcon  flex flex-wrap gap-1 mx-5 lg:w-full justify-center">
+    <div className="ballcon  flex flex-wrap gap-1 mx-5 lg:w-full justify-center">
 
       {blogdata.length>0?blogdata.map((datas,index)=>{
        
        return <div key={index} className='blogscard my-1 flex justify-center flex-col items-center rounded-md shadow-lg cursor-pointer' onClick={()=> navigate("/blog/blogexpo",{state:{ datas }})}>
        
-        <div class="blogsimag"> 
+        <div className="blogsimag"> 
           <img src={datas.image} alt="" />
         </div>  
         <h4>{datas.btitle}</h4>
+        
+        <div class="feat flex my-3">
+        <button className='px-2 bg-green-500 mx-1 py-1 rounded-lg text-[#0a0909]'>
+          {datas.bstack}
+        </button>
+        <button className='px-2 bg-blue-500 mx-1 py-1 rounded-lg text-[white]'>
+          {datas.bcategories}
+        </button>
+        </div>
+       
          
        </div>
       }):islodding?(<div className="spinner-border text-primary my-3" style={{width:"5rem",height:"5rem"}} role="status">

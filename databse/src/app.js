@@ -12,6 +12,9 @@ const app = express();
 app.use(cors())
 app.use(express.json())
 const PORT=process.env.PORT;
+
+//this fro iamge multer 
+//static host the folder
 app.use(express.static("public"))
 
 

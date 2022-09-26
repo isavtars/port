@@ -98,11 +98,11 @@ const ppupdate=async(e)=>{
     <Dnav />
     </div>
 
-        <div class="addprojectspage mx-1 rounded-sm shadow-lg flex justify-center items-center h-20">
+        <div className="addprojectspage mx-1 rounded-sm shadow-lg flex justify-center items-center h-20">
             <h1 className='text-center  p-2 rounded-sm shadow-md text-yellow-50 text-2xl font-bold  mx-1 my-1 bg-[#FCA61F]'>update projects</h1>
         </div>
         <ToastContainer />
-        <div class="addpostform flex justify-center my-1  items-center ">
+        <div className="addpostform flex justify-center my-1  items-center ">
         <form action="" className='projectspost rounded-sm shadow-lg ' onSubmit={ppupdate} >
           <div className="ptitle">
             <input type="text" name='ptitle' placeholder='title' className="px-2" value={input.ptitle}  onChange={hanlechange}/>
