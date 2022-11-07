@@ -1,5 +1,5 @@
 
-import React, { useRef, useState } from "react";
+import React, {  } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,10 +14,10 @@ import "./Home.css"
 import {Autoplay,  Navigation, Pagination} from "swiper";
 
 
-import Image1 from "../../assets/images/flutter.png"
-import Image2 from "../../assets/images/js.png"
-import Image3 from "../../assets/images/developer.png"
-import Image4 from "../../assets/images/reacts.png"
+import Image1 from "../../assets/images/ff.jpg"
+import Image2 from "../../assets/images/mm.jpg"
+import Image3 from "../../assets/images/dj.jpg"
+import Image4 from "../../assets/images/rrr.jpg"
 
 
 //import components

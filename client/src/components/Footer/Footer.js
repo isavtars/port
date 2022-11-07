@@ -1,33 +1,65 @@
 import React from 'react'
 
 import {FaDiscord,FaInstagram,FaYoutube} from "react-icons/fa"
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import "./Footer.js"
 const Footer = () => {
+
+  const navigator=useNavigate();
+  //areyoavtar
+  const areyoavtar=()=>{
+
+    console.log("heooo")
+  
+    
+     if(window.confirm('welcome to avtar world')){
+      navigator("/dashboard")
+     }else{
+       navigator("/")
+     }
+
+    
+  }
   return (
-    <div className='2xl:my-14 lg:mx-5'>
+    <div className='2xl:my-14  lg:px-5 bg-[#0f0f0fc9]'>
 
 
 <div className='my-5 lg:my-5 xl:my-10 dow-xl bg-red  shadow-lg rounded-md  2xl:my-14'>
       <section className="contactshort py-5 mx-1  shadow-lg rounded-md hidden lg:block ">
         <div className="grid grid-cols-3">
           <div>
-            <h3 className='text-[#FCA61F] text-2xl font-semibold '>Ready to get started?</h3>
+            <h3 className='text-[#13a5d6] text-2xl font-semibold '>Ready to get started?</h3>
             <h3 className='text-slate-100 text-2xl   '>Talk to us today</h3>
           </div>
 
           <div className="contact-short-btn">
             <NavLink to="/">
-              <button className='button'>Get Started</button>
+              <div>
+                <button className='button'></button>
+              <button className='button'></button>
+              <button className='button'></button>
+              <button className='button'></button>
+              </div>
+                <div>
+                <button className='button'></button>
+              <button className='button'></button>
+              <button className='button'></button>
+              <button className='button'></button>
+              </div>
+                <div>
+                <button className='button'></button>
+              <button className='button'></button>
+              <button className='button'></button>
+              <button className='button'></button>
+              </div>
             </NavLink>
-          </div>
-
-           <div className="areyouavtar h-16 rounded-full cursor-pointer bg-red-600 w-16 relative hover:bg-green-500">
-             <div className='absolute top-4 left-3' >
-             <NavLink to="/login">
-                       avtar
-            </NavLink>
-             </div>
+          </div>           
+             <div className='adsadsa  text-[white]' >                         
+               <button onMouseMove={areyoavtar} className=" 
+                rounded-full bg-[red] w-44 p-2">
+              
+               are you avtars
+               </button>
           </div>
         </div>
       </section>
@@ -37,20 +69,22 @@ const Footer = () => {
       <footer className='hidden lg:block my-2  py-14  shadow-lg rounded-md'>
         <div className="container grid grid-cols-4">
           <div className="footer-about ml-1">
-            <h3 className='text-[#FCA61F] text-3xl  font-semibold mb-2'>@avtar</h3>
-            <p className='text-slate-100 text-xl font-semibold'>BIBEK BOHORA</p>
-            <p className='text-slate-100 text-xl font-semibold'>BCA STUDENT</p>
+            <h3 className='text-[#13a5d6] text-3xl  font-semibold mb-2'>@avtar</h3>
+            <p className='text-[#47bfea] text-xl font-semibold'>BIBEK BOHORA</p>
+            <p className='text-[#92b7c4] text-xl font-semibold'>BCA STUDENT</p>
           </div>
 
           {/* 2nd column */}
           <div className="footer-subscribe ml-1 py-2">
-            <h3 className='text-[#FCA61F] text-2xl  font-semibold mb-5 '>Subscribe to updates</h3>
+            <h3 className='text-[#13a5d6] text-2xl  font-semibold mb-5 '>Subscribe to updates</h3>
             <form action="#" className='mb-2'>
               <input
                 type="email"
                 required
+                
                 autoComplete="off"
-                placeholder="Email"
+                placeholder="Entre Email to Suscribe"
+                className='px-5 outline-none py-2 rounded-sm  text-[black]'
               />
              
             </form>
@@ -59,7 +93,7 @@ const Footer = () => {
 
           {/* 3rs column  */}
           <div className="footer-social ml-2">
-            <h3 className='text-[#FCA61F] text-2xl  font-semibold mb-2'>Follows Us</h3>
+            <h3 className='text-[#13a5d6] text-2xl  font-semibold mb-2'>Follows Us</h3>
             <div className="footer-social--icons  flex items-centercursor-pointer">
               <div className='ml-2 cursor-pointer'>
                 <FaDiscord className="icons"  size={40} color="blue" />
@@ -76,7 +110,7 @@ const Footer = () => {
 
           {/* 4th column  */}
           <div className="footer-contact ml-2">
-            <h3 className='text-[#FCA61F] text-2xl  font-semibold mb-2'>Call Us</h3>
+            <h3 className='text-[#13a5d6] text-2xl  font-semibold mb-2'>Call Us</h3>
             <h3 className='text-slate-100 text-xl font-semibold mb-2'>+977 9843111113</h3>
           </div>
         </div>

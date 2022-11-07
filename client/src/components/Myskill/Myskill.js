@@ -46,7 +46,7 @@ const Myskill = () => {
   return (
     
 
-    <div className='contact lg:grid grid-cols-2 lg:h-screen xl:my-16 '>
+    <div className='contact  mx-8 lg:grid grid-cols-2 lg:h-screen xl:my-16 '>
          {/* .  skillrextcon */}
        <div className="skilltext mx-3 lg:mx-8 lg:mt-12">
         <div className="stcont py-2 ">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./Layout.css"
-import { NavLink ,Link} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { HiOutlineMenuAlt1} from "react-icons/hi";
 import {GiSkullCrossedBones } from "react-icons/gi";
 import { Outlet } from 'react-router-dom'
@@ -33,7 +33,7 @@ const haldleclick=()=>{
 
          
       {/* // mobile */}
-      <div className='moiilecont  lg:hidden flex justify-between items-center'>
+      <div className='moiilecont bg-[#022f49]  lg:hidden flex justify-between items-center'>
          <div className='mx-3 text-2xl flex-1'>
           Avtar
          </div>
